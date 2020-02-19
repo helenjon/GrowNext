@@ -18,7 +18,7 @@ public class LoginPage extends BasePage {
     public static final String PAGE_IDENTIFIER = "Login Page";
 
     public LoginPage(WebDriver driver) {
-        this.driver= driver;
+                this.driver= driver;
      }
 
     public void clickLogin() {
