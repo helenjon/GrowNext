@@ -1,14 +1,17 @@
 # new feature
 # Tags: optional
 
-Feature: Regional Settings
+Feature: Regional Settings Setup
+
 
   Scenario: Checking setup Language
     Given I am on Home Page
     When I click to Change button
-    And Select Language "Svenska" and Save
+    And I click on "Language" dropdown
+    And I select "Svenska"
+    And click Save
     Then Header contains Language "Svenska"
-    And Home Page is translated
+    And Home Page has url "Svenska"
 
 
   Scenario: Checking setup Country
@@ -16,4 +19,4 @@ Feature: Regional Settings
     When I click to Change button
     And Select Country "Taiwan" and Save o
     Then Header contains Country  "Suomi"
-    And Home Page is translated
+    And Home Page is translated t

@@ -4,33 +4,20 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
-import test.pages.AutomationPracticeForm;
-import test.pages.BasePage;
-import webdrivers.WebDriverr;
+import test.pages.automationpracticeform.AutomationPracticeForm;
+import test.pages.PageFactory;
+import webbrowser.WebBrowser;
 
 public class HT2 {
 
-    WebDriver driver = WebDriverr.initialization();
     AutomationPracticeForm form;
+    WebBrowser webBrowser = new WebBrowser();
 
 
     @Given("^I am on \"([^\"]*)\" page$")
     public void iAmOnAutomationPracticeForm(String arg0) {
-        form = (AutomationPracticeForm) BasePage.getPageByIdentifier(arg0, driver);
-
+        form = (AutomationPracticeForm) PageFactory.getPageByIdentifier(AutomationPracticeForm.PAGE_IDENTIFIER);
     }
-
-    @When("^I select \"([^\"]*)\"$")
-    public void iSelect(String arg0)  {
-       form.setValue(arg0);
-    }
-
-    @And("^Years of Experience \"([^\"]*)\"$")
-    public void yearsOfExperience(String arg0)  {
-        form.setValue(arg0);
-    }
-
 
     @And("^Professions \"([^\"]*)\"$")
     public void professions(String arg0)  {

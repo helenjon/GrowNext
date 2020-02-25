@@ -1,35 +1,32 @@
-package test.pages;
+package test.pages.facebook;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import test.pages.BasePage;
+import webbrowser.WebBrowser;
 
 
 public class LoginPage extends BasePage {
 
-
-    private WebDriver driver;
     private WebElement emailw;
     private  WebElement pass;
     private WebElement login;
-
     public static final String PAGE_IDENTIFIER = "Login Page";
 
-    public LoginPage(WebDriver driver) {
-                this.driver= driver;
-     }
+    public LoginPage(){
+        System.out.println("test");
+    }
+
 
     public void clickLogin() {
-        login = driver.findElement(By.id("loginbutton"));
+        login = WebBrowser.driver.findElement(By.id("loginbutton"));
         login.click();
     }
 
 
     public void fillINEmailPass(String email, String password) {
-        emailw =driver.findElement(By.id("email"));
-        pass = driver.findElement(By.id("pass"));
+        emailw =WebBrowser.driver.findElement(By.id("email"));
+        pass = WebBrowser.driver.findElement(By.id("pass"));
         emailw.clear();
         pass.clear();
         emailw.sendKeys(email);
@@ -37,7 +34,7 @@ public class LoginPage extends BasePage {
     }
 
     public void getURL(String url){
-        driver.get(url);
+        WebBrowser.driver.get(url);
     }
 
 

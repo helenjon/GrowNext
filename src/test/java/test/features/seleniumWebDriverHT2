@@ -5,8 +5,6 @@
 #6.Check the Check Box ‘Selenium IDE’ for category ‘Automation Tool’ (Use cssSelector)
 
 
-
-
 Feature: HT2
 
   Scenario: Selecting webelements

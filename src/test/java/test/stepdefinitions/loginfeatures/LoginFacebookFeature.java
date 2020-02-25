@@ -4,21 +4,19 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
-import test.pages.BasePage;
-import test.pages.LoginPage;
-import webdrivers.WebDriverr;
-
+import test.pages.facebook.LoginPage;
+import test.pages.PageFactory;
+import webbrowser.WebBrowser;
 
 public class LoginFacebookFeature {
 
-    WebDriver driver = WebDriverr.initialization();
-    LoginPage loginPage;
+
+    private static WebBrowser webBowser = new WebBrowser();
+    private LoginPage loginPage = (LoginPage) PageFactory.getPageByIdentifier(LoginPage.PAGE_IDENTIFIER);
 
 
     @Given("^I am on the facebook \"([^\"]*)\" one$")
     public void iAmOnTheFacebookOne(String arg0) {
-        loginPage = (LoginPage) BasePage.getPageByIdentifier("Login Page", driver);
         loginPage.getURL(arg0);
     }
 

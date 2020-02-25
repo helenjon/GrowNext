@@ -16,7 +16,6 @@ public class PageFactory {
         }
     }
 
-
     private static Object initPage(String identifier) {
         switch (identifier) {
             case LoginPage.PAGE_IDENTIFIER:
@@ -28,8 +27,5 @@ public class PageFactory {
             default: throw new IllegalArgumentException(identifier +"is not found");
         }
     }
-
-
-
 
 }
