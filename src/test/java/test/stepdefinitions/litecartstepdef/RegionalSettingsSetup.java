@@ -7,7 +7,7 @@ import cucumber.api.java.en.When;
 import test.pages.PageFactory;
 import test.pages.litecart.HomePageLiteCart;
 
-public class RegionalSettings {
+public class RegionalSettingsSetup {
 
 
     private HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
@@ -15,6 +15,7 @@ public class RegionalSettings {
 
     @Given("^I am on Home Page$")
     public void iAmOnHomePage() {
+           homePageLiteCart.getHomePage();
     }
 
     @When("^I click to Change button$")

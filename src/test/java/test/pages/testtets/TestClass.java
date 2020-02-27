@@ -82,12 +82,14 @@ public class TestClass {
         driver.manage().deleteAllCookies();
         String test = "Customer Service";
         driver.get("http://kuopassa.net/litecart");
-        bottomLinks.addAll(driver.findElements(By.xpath("//ul[@class= 'list-unstyled']//a")));
-        for (WebElement element : bottomLinks){
-            if(element.getAttribute("textContent").equals(test)) element.click();
-            Thread.sleep(3000);
-        }
+        System.out.println(driver.getTitle());
 
+//        bottomLinks.addAll(driver.findElements(By.xpath("//ul[@class= 'list-unstyled']//a")));
+//        for (WebElement element : bottomLinks){
+//            if(element.getAttribute("textContent").equals(test)) element.click();
+//            Thread.sleep(3000);
+//        }
+//
 
     }
 

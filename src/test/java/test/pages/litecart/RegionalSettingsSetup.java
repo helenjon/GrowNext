@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import test.utilities.MyLog;
 import webbrowser.WebBrowser;
 
-public class RegionalSettings  {
+public class RegionalSettingsSetup  {
 
     String dropdownCase;
 
-    RegionalSettings(){
+    RegionalSettingsSetup(){
         System.out.println("RegionalSettings");
         MyLog.info("RegionalSettings   opened");
     }

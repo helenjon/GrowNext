@@ -13,17 +13,22 @@ public class HomePageLiteCart extends BasePage {
 
     public static final String PAGE_IDENTIFIER = "Home Page LiteCart";
     private WebElement change;
-    RegionalSettings regionalSettings;
+    RegionalSettingsSetup regionalSettings;
 
-    public HomePageLiteCart(){
+
+    public void getHomePage(){
         WebBrowser.driver.get("http://kuopassa.net/litecart");
-        change = WebBrowser.driver.findElement(By.className("change"));
+        getChange();
+    }
+
+    private void getChange(){
+        change =  WebBrowser.driver.findElement(By.className("change"));
     }
 
 
     public void openRegionlSettings(){
         change.click();
-        regionalSettings = new RegionalSettings();
+        regionalSettings = new RegionalSettingsSetup();
         WebDriverWait wait = new WebDriverWait(WebBrowser.driver, 5);
         wait.until(ExpectedConditions.visibilityOf(WebBrowser.driver.findElement(By.id("box-regional-settings"))));
         //MyLog.info(WebBrowser.driver.findElement(By.id("box-regional-settings")).getText());

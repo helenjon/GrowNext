@@ -2,13 +2,16 @@ package test.pages.litecart;
 
 import org.openqa.selenium.WebElement;
 import test.pages.BasePage;
+import test.pages.PageFactory;
 import webbrowser.WebBrowser;
 
 import java.util.List;
 
 public class MainPage extends BasePage {
 
-    public MainPage() {
+    public static final String PAGE_IDENTIFIER = "Main Page";
+
+    public void driverGetMainPage(){
         WebBrowser.driver.get("http://kuopassa.net/litecart/en/");
     }
 
