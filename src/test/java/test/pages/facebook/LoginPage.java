@@ -19,14 +19,14 @@ public class LoginPage extends BasePage {
 
 
     public void clickLogin() {
-        login = WebBrowser.driver.findElement(By.id("loginbutton"));
+        login = WebBrowser.getDriver().findElement(By.id("loginbutton"));
         login.click();
     }
 
 
     public void fillINEmailPass(String email, String password) {
-        emailw =WebBrowser.driver.findElement(By.id("email"));
-        pass = WebBrowser.driver.findElement(By.id("pass"));
+        emailw =WebBrowser.getDriver().findElement(By.id("email"));
+        pass = WebBrowser.getDriver().findElement(By.id("pass"));
         emailw.clear();
         pass.clear();
         emailw.sendKeys(email);
@@ -34,7 +34,7 @@ public class LoginPage extends BasePage {
     }
 
     public void getURL(String url){
-        WebBrowser.driver.get(url);
+        WebBrowser.getDriver().get(url);
     }
 
 

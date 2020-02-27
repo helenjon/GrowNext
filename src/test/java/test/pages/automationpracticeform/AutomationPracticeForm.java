@@ -12,12 +12,12 @@ public class AutomationPracticeForm extends BasePage {
 
     private WebElement element;
     public AutomationPracticeForm (){
-        WebBrowser.driver.get("https://www.toolsqa.com/automation-practice-form/");
+        WebBrowser.getDriver().get("https://www.toolsqa.com/automation-practice-form/");
     }
 
     public void setValue(String arg0){
-       element = WebBrowser.driver.findElement(By.xpath("//input[@value='"+arg0+"']"));
-       Actions ttt = new Actions(WebBrowser.driver);
+       element = WebBrowser.getDriver().findElement(By.xpath("//input[@value='"+arg0+"']"));
+       Actions ttt = new Actions(WebBrowser.getDriver());
        ttt.moveToElement(element);
        element.click();
     }

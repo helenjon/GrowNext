@@ -1,4 +1,4 @@
-package test.stepdefinitions.litecartstepdef;
+package test.stepdefinitions;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -10,7 +10,7 @@ public class Hooks {
     @Before
     public void BeforeSteps() {
         System.out.println("HOOKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        WebBrowser webBowser = new WebBrowser();
+        WebBrowser.initializationWebDriver();
         DOMConfigurator.configure("Log4j.xml");
 
     }
@@ -18,9 +18,6 @@ public class Hooks {
     @After
     public void AfterSteps() {
         System.out.println("AFTER !!!!!!!!!!!!HOOKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        WebBrowser.driver.quit();
-
+        WebBrowser.getDriver().quit();
     }
-
-
 }

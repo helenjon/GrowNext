@@ -12,8 +12,8 @@ public class MainPage extends BasePage {
     public static final String PAGE_IDENTIFIER = "Main Page";
 
     public void driverGetMainPage(){
-        WebBrowser.driver.get("http://kuopassa.net/litecart/en/");
-    }
+        WebBrowser.driver.get("http://kuopassa.net/litecart/en/"); }
+
 
     public void mainPageLinksclick(String arg0) {
         List<WebElement> listLinks = bottomMenu.getListBottomLinks();

@@ -25,8 +25,7 @@ public class HomePageLiteCart extends BasePage {
         change =  WebBrowser.driver.findElement(By.className("change"));
     }
 
-
-    public void openRegionlSettings(){
+    public void openRegionlSettings() {
         change.click();
         regionalSettings = new RegionalSettingsSetup();
         WebDriverWait wait = new WebDriverWait(WebBrowser.driver, 5);
@@ -36,7 +35,7 @@ public class HomePageLiteCart extends BasePage {
 
     public void setRegionalSettingsDropdown(String arg0) {
         MyLog.info("!!!!!!!!  +++++++++ Select Dropdown " + arg0);
-         regionalSettings.selectDropdown(arg0);
+        regionalSettings.selectDropdown(arg0);
     }
 
     public void setRegionalSettingsDropdownValue(String arg0) {
@@ -45,11 +44,11 @@ public class HomePageLiteCart extends BasePage {
     }
 
     public void RegionalSettingsSave() {
-        MyLog.info("!!!!!!!!  +++++++++ Click Save" );
+        MyLog.info("!!!!!!!!  +++++++++ Click Save");
         regionalSettings.getSaveBatton().click();
     }
 
-    public void CheckForSetupRegionalSetings(String arg0){
+    public void CheckForSetupRegionalSetings(String arg0) {
         Assert.assertEquals(arg0, regionalSettings.getPageLanguageValue());
     }
 

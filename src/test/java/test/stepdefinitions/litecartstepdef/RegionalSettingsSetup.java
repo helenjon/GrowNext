@@ -19,18 +19,18 @@ public class RegionalSettingsSetup {
     }
 
     @When("^I click to Change button$")
-    public void iClickToButton()  {
+    public void iClickToButton() {
         homePageLiteCart.openRegionlSettings();
     }
 
     @And("^I click on \"([^\"]*)\" dropdown$")
-    public void iClickOnDropdown(String arg0)  {
+    public void iClickOnDropdown(String arg0) {
         homePageLiteCart.setRegionalSettingsDropdown(arg0);
     }
 
 
     @And("^I select \"([^\"]*)\"$")
-    public void iSelect(String arg0)  {
+    public void iSelect(String arg0) {
         homePageLiteCart.setRegionalSettingsDropdownValue(arg0);
     }
 
@@ -42,11 +42,11 @@ public class RegionalSettingsSetup {
 
     @Then("^Header contains Language \"([^\"]*)\"$")
     public void headerContainsLanguage(String arg0) {
-           homePageLiteCart.CheckForSetupRegionalSetings(arg0);
+        homePageLiteCart.CheckForSetupRegionalSetings(arg0);
     }
 
     @And("^Home Page has url \"([^\"]*)\"$")
-    public void homePageHasUrl(String arg0)  {
+    public void homePageHasUrl(String arg0) {
 
     }
 }
