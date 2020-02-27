@@ -13,7 +13,7 @@ public class BottomMenu   {
     List<WebElement> bottomLinks = new ArrayList<WebElement>();
 
     public List<WebElement> getListBottomLinks(){
-        bottomLinks.addAll(WebBrowser.driver.findElements(By.xpath("//ul[@class= 'list-unstyled']//a")));
+        bottomLinks.addAll(WebBrowser.getDriver().findElements(By.xpath("//ul[@class= 'list-unstyled']//a")));
         return bottomLinks;
     }
 

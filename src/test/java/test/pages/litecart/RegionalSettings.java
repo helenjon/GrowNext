@@ -19,16 +19,16 @@ public class RegionalSettings  {
         dropdownCase = arg0;
         switch (arg0) {
             case "Language":
-                WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
+                WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
                 break;
             case "Currency":
-                WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
+                WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
                 break;
             case "Country":
-                WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
+                WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
                 break;
             case "Zone/State/Province":
-                WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
+                WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
                 break;
             default:
                 MyLog.error(new IllegalArgumentException(arg0 + " is not found").getMessage());
@@ -58,11 +58,11 @@ public class RegionalSettings  {
 
     private void selectLanguage(String arg0)  {
         if ("Suomi".equals(arg0))
-             WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'fi']")).click();
+             WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'fi']")).click();
         if ("Svenska".equals(arg0))
-            WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'sv']")).click();
+            WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'sv']")).click();
         if ("English".equals(arg0))
-            WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'en']")).click();
+            WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'en']")).click();
     }
 
     private void selectCurrency(String arg0)  {}
@@ -74,11 +74,11 @@ public class RegionalSettings  {
 
 
     public WebElement getSaveBatton(){
-        return  WebBrowser.driver.findElement(By.xpath("//button[@name='save']"));
+        return  WebBrowser.getDriver().findElement(By.xpath("//button[@name='save']"));
     }
 
     public String getPageLanguageValue(){
-        return WebBrowser.driver.findElement(By.xpath(".//div[@id='region']/div[@class='language']")).getAttribute("textContent");
+        return WebBrowser.getDriver().findElement(By.xpath(".//div[@id='region']/div[@class='language']")).getAttribute("textContent");
     }
 
 

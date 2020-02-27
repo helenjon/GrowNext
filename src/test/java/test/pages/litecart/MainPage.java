@@ -9,7 +9,7 @@ import java.util.List;
 public class MainPage extends BasePage {
 
     public MainPage() {
-        WebBrowser.driver.get("http://kuopassa.net/litecart/en/");
+        WebBrowser.getDriver().get("http://kuopassa.net/litecart/en/");
     }
 
     public void mainPageLinksclick(String arg0) {
