@@ -46,6 +46,6 @@ public class RegionalSettings {
 
     @And("^Home Page has url \"([^\"]*)\"$")
     public void homePageHasUrl(String arg0)  {
-       // homePageLiteCart.homePageUrlCheck(arg0);
+
     }
 }

@@ -2,7 +2,7 @@ package test.pages.litecart;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import test.utilities.Log;
+import test.utilities.MyLog;
 import webbrowser.WebBrowser;
 
 public class RegionalSettings  {
@@ -11,7 +11,7 @@ public class RegionalSettings  {
 
     RegionalSettings(){
         System.out.println("RegionalSettings");
-        Log.info("RegionalSettings   opened");
+        MyLog.info("RegionalSettings   opened");
     }
 
 
@@ -31,7 +31,8 @@ public class RegionalSettings  {
                 WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']")).click();
                 break;
             default:
-                throw new IllegalArgumentException(arg0 + " is not found");
+                MyLog.error(new IllegalArgumentException(arg0 + " is not found").getMessage());
+
         }
     }
 
@@ -42,7 +43,7 @@ public class RegionalSettings  {
                 selectLanguage(arg0);
                 break;
             case "Currency":
-                selectСurrency(arg0);
+                selectCurrency(arg0);
                 break;
             case "Country":
                 selectCountry(arg0);
@@ -64,7 +65,7 @@ public class RegionalSettings  {
             WebBrowser.driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'en']")).click();
     }
 
-    private void selectСurrency(String arg0)  {}
+    private void selectCurrency(String arg0)  {}
 
     private void selectCountry(String arg0)  {}
 

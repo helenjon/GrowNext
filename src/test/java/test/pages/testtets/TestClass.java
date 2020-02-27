@@ -75,8 +75,20 @@ public class TestClass {
 //
         //driver.findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'fi']")).click();
 
-          String test = "http://kuopassa.net/litecart/sv/";
-          System.out.println(test.contains("/sv/"));
+
+        List<WebElement> bottomLinks = new ArrayList<WebElement>();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+        String test = "Customer Service";
+        driver.get("http://kuopassa.net/litecart");
+        bottomLinks.addAll(driver.findElements(By.xpath("//ul[@class= 'list-unstyled']//a")));
+        for (WebElement element : bottomLinks){
+            if(element.getAttribute("textContent").equals(test)) element.click();
+            Thread.sleep(3000);
+        }
+
+
     }
 
 

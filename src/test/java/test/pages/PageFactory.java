@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriverException;
 import test.pages.automationpracticeform.AutomationPracticeForm;
 import test.pages.facebook.LoginPage;
 import test.pages.litecart.HomePageLiteCart;
+import test.utilities.MyLog;
 
 public class PageFactory {
 
@@ -17,6 +18,7 @@ public class PageFactory {
     }
 
     private static Object initPage(String identifier) {
+
         switch (identifier) {
             case LoginPage.PAGE_IDENTIFIER:
                 return new LoginPage();
@@ -24,8 +26,12 @@ public class PageFactory {
                 return new AutomationPracticeForm();
             case HomePageLiteCart.PAGE_IDENTIFIER:
                 return new HomePageLiteCart();
-            default: throw new IllegalArgumentException(identifier +"is not found");
+            default:
+                MyLog.error(new IllegalArgumentException(identifier + "is not found").getMessage());
+                throw new IllegalArgumentException(identifier + "is not found");
+            }
         }
-    }
 
 }
+
+

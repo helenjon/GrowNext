@@ -2,11 +2,10 @@ package test.utilities;
 
 import org.apache.log4j.Logger;
 
-public class Log {
-
+public class MyLog {
 
     //Initialize Log4j logs
-    private static Logger Log = Logger.getLogger(Log.class.getName());
+    private static Logger Log = Logger.getLogger(MyLog.class.getName());
 
 
 

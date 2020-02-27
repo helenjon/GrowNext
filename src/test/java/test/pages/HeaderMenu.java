@@ -1,4 +1,4 @@
-package test.pages.litecart;
+package test.pages;
 
 public class HeaderMenu {
 }
