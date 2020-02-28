@@ -1,7 +1,6 @@
 package test.pages.litecart;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -9,27 +8,27 @@ import test.pages.BasePage;
 import test.utilities.MyLog;
 import webbrowser.WebBrowser;
 
+
+
+//import static webbrowser.WebBrowser.waitForElementToBeVisible;
+
 public class HomePageLiteCart extends BasePage {
 
     public static final String PAGE_IDENTIFIER = "Home Page LiteCart";
-    private WebElement change;
+    public static final String REGIONAL_SETTINGS_POPUP_XPATH = "//div[@id='box-regional-settings']";
+
     RegionalSettingsSetup regionalSettings;
 
-
-    public void getHomePage(){
-        WebBrowser.driver.get("http://kuopassa.net/litecart");
-        getChange();
+    @Override
+    public void getPage() {
+        WebBrowser.getDriver().get("http://kuopassa.net/litecart/en/");
     }
 
-    private void getChange(){
-        change =  WebBrowser.driver.findElement(By.className("change"));
-    }
 
-    public void openRegionlSettings() {
-        change.click();
+     public void openRegionlSettings() {
+        headerMenu.getButtonChange().click();
         regionalSettings = new RegionalSettingsSetup();
-        WebDriverWait wait = new WebDriverWait(WebBrowser.driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(WebBrowser.driver.findElement(By.id("box-regional-settings"))));
+        WebBrowser.waitForElementToBeVisible(WebBrowser.getDriver().findElement(byRegionalSettingsPopUp()));
         //MyLog.info(WebBrowser.driver.findElement(By.id("box-regional-settings")).getText());
     }
 
@@ -45,11 +44,12 @@ public class HomePageLiteCart extends BasePage {
 
     public void RegionalSettingsSave() {
         MyLog.info("!!!!!!!!  +++++++++ Click Save");
-        regionalSettings.getSaveBatton().click();
+        regionalSettings.getSaveButton().click();
     }
 
     public void CheckForSetupRegionalSetings(String arg0) {
-        Assert.assertEquals(arg0, regionalSettings.getPageLanguageValue());
+        Assert.assertEquals(arg0, headerMenu.getPageLanguageValue());
     }
 
+    private By byRegionalSettingsPopUp() { return By.xpath(REGIONAL_SETTINGS_POPUP_XPATH); }
 }

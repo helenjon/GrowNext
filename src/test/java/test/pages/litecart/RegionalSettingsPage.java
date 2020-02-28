@@ -8,9 +8,11 @@ public class RegionalSettingsPage extends BasePage {
 
     public static final String PAGE_IDENTIFIER = "Regional Settings";
 
-    public void getCustomerServicePage(){
-        WebBrowser.driver.get("http://kuopassa.net/litecart/en/regional_settings");
+    @Override
+    public void getPage() {
+        WebBrowser.getDriver().get("http://kuopassa.net/litecart/en/regional_settings");
     }
+
 
 
 }

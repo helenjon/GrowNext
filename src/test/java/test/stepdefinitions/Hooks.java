@@ -12,7 +12,6 @@ public class Hooks {
         System.out.println("HOOKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         WebBrowser.initializationWebDriver();
         DOMConfigurator.configure("Log4j.xml");
-
     }
 
     @After

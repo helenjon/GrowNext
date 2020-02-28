@@ -7,7 +7,7 @@ import webbrowser.WebBrowser;
 public class SideMenu {
 
     public WebElement getTitle(){
-        return WebBrowser.driver.findElement(By.xpath("//div[@id='box-information-links']/*[@class ='title']"));
+        return WebBrowser.getDriver().findElement(By.xpath("//div[@id='box-information-links']/*[@class ='title']"));
     }
 
 

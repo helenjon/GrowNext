@@ -21,8 +21,7 @@ import static io.github.bonigarcia.wdm.DriverManagerType.IEXPLORER;
 
 public class WebBrowser {
 
-    //   public static Properties properties;
-    public static WebDriverWait wait;
+    public static WebDriverWait waitHere;
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
@@ -38,12 +37,11 @@ public class WebBrowser {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Integer.parseInt(properties.getProperty("implicitlyWait")), TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(properties.getProperty("pageLoadTimeout")), TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, Integer.parseInt(properties.getProperty("wait")));
+        waitHere = new WebDriverWait(driver, Integer.parseInt(properties.getProperty("wait")));
     }
 
-    public static void waitForElementToBeVisible(WebElement element, int timeOutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), timeOutInSeconds);
-        wait.until(ExpectedConditions.visibilityOf(element));
+    public static void waitForElementToBeVisible(WebElement element) {
+        waitHere.until(ExpectedConditions.visibilityOf(element));
     }
 
     private static void initBrowser(String driverName) {

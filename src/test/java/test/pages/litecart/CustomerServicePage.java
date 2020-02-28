@@ -8,11 +8,12 @@ public class CustomerServicePage extends BasePage {
 
     public static final String PAGE_IDENTIFIER = "Customer Service";
 
-    public void getCustomerServicePage(){
-        WebBrowser.driver.get("http://kuopassa.net/litecart/en/customer-service-s-0");
+    @Override
+    public void getPage() {
+         WebBrowser.getDriver().get("http://kuopassa.net/litecart/en/customer-service-s-0");
     }
 
-    public String getSideMenuTitle(){
+    public String getSideMenuTitle() {
         return sideMenu.getTitle().getAttribute("textContent");
     }
 

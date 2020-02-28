@@ -20,7 +20,7 @@ public class VerificationSwitchingBetweenPages {
 
     @Given("^I am on Main Page$")
     public void iAmOnMainPage() {
-        mainPage.driverGetMainPage();
+        mainPage.getPage();
     }
 
     @When("^I click \"([^\"]*)\"$")
@@ -38,7 +38,7 @@ public class VerificationSwitchingBetweenPages {
 
     @Then("^Redirect to \"([^\"]*)\"$")
     public void redirectTo(String arg0)  {
-       System.out.println(arg0 +"    " +  WebBrowser.driver.getTitle());
-       Assert.assertEquals(arg0, WebBrowser.driver.getTitle());
+       System.out.println(arg0 +"    " +  WebBrowser.getDriver().getTitle());
+       Assert.assertEquals(arg0, WebBrowser.getDriver().getTitle());
     }
 }

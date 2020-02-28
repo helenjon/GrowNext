@@ -8,23 +8,22 @@ import webbrowser.WebBrowser;
 
 public class LoginPage extends BasePage {
 
-    private WebElement emailw;
-    private  WebElement pass;
-    private WebElement login;
     public static final String PAGE_IDENTIFIER = "Login Page";
+    private WebElement login;
 
-    public LoginPage(){
-        System.out.println("test");
+    @Override
+    public void getPage() {
+        WebBrowser.getDriver().get("https://www.facebook.com");
     }
-
 
     public void clickLogin() {
         login = WebBrowser.getDriver().findElement(By.id("loginbutton"));
         login.click();
     }
 
-
     public void fillINEmailPass(String email, String password) {
+        WebElement emailw;
+        WebElement pass;
         emailw =WebBrowser.getDriver().findElement(By.id("email"));
         pass = WebBrowser.getDriver().findElement(By.id("pass"));
         emailw.clear();
@@ -33,9 +32,10 @@ public class LoginPage extends BasePage {
         pass.sendKeys(password);
     }
 
-    public void getURL(String url){
+    public void getURL(String url) {
         WebBrowser.getDriver().get(url);
     }
+
 
 
 }

@@ -15,7 +15,7 @@ public class RegionalSettingsSetup {
 
     @Given("^I am on Home Page$")
     public void iAmOnHomePage() {
-           homePageLiteCart.getHomePage();
+           homePageLiteCart.getPage();
     }
 
     @When("^I click to Change button$")
