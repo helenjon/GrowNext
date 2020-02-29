@@ -9,7 +9,6 @@ import test.pages.litecart.HomePageLiteCart;
 
 public class RegionalSettingsSetup {
 
-
     private HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
 
 

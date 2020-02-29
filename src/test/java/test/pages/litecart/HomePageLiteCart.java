@@ -1,16 +1,11 @@
 package test.pages.litecart;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import test.pages.BasePage;
 import test.utilities.MyLog;
 import webbrowser.WebBrowser;
 
-
-
-//import static webbrowser.WebBrowser.waitForElementToBeVisible;
 
 public class HomePageLiteCart extends BasePage {
 
@@ -25,7 +20,7 @@ public class HomePageLiteCart extends BasePage {
     }
 
 
-     public void openRegionlSettings() {
+    public void openRegionlSettings() {
         headerMenu.getButtonChange().click();
         regionalSettings = new RegionalSettingsSetup();
         WebBrowser.waitForElementToBeVisible(WebBrowser.getDriver().findElement(byRegionalSettingsPopUp()));
@@ -51,5 +46,21 @@ public class HomePageLiteCart extends BasePage {
         Assert.assertEquals(arg0, headerMenu.getPageLanguageValue());
     }
 
-    private By byRegionalSettingsPopUp() { return By.xpath(REGIONAL_SETTINGS_POPUP_XPATH); }
+//    public void Linkclick(String arg0) {
+//        List<WebElement> listLinks = bottomMenu.getListBottomLinks();
+//        for (WebElement element : listLinks) {
+//            if (element.getAttribute("textContent").equals(arg0)) {
+//                element.click();
+//                break;
+//            }
+//        }
+//    }
+
+    public void Linkclick(String arg0) {
+        bottomMenu.getBottomLink(arg0).click();
+    }
+
+    private By byRegionalSettingsPopUp() {
+        return By.xpath(REGIONAL_SETTINGS_POPUP_XPATH);
+    }
 }

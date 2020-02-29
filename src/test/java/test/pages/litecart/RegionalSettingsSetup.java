@@ -13,6 +13,9 @@ public class RegionalSettingsSetup  {
     private static final String COUNTRY_FIELD_XPATH = "//form[@name='region_form']//select[@name = 'country_code']";
     private static final String ZONE_FIELD_XPATH = "//form[@name='region_form']//select[@name = 'zone_code']";
     private static final String SAVE_BUTTON_XPATH = "//button[@name='save']";
+    private static final String SELECT_LANGUAGE_SUOMI_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'fi']";
+    private static final String SELECT_LANGUAGE_SVENSKA_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'sv']";
+    private static final String SELECT_LANGUAGE_ENGLISH_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'en']";
 
     public void selectDropdown(String arg0) {
         dropdownCase = arg0;
@@ -57,16 +60,18 @@ public class RegionalSettingsSetup  {
     private By byCurrencyField() {     return By.xpath(CURRENCY_FIELD_XPATH);    }
     private By byCountryField() {     return By.xpath(COUNTRY_FIELD_XPATH);      }
     private By byZoneField() {     return By.xpath(ZONE_FIELD_XPATH);      }
+    private By byLanguageSuomi() {     return By.xpath(SELECT_LANGUAGE_SUOMI_XPATH);      }
+    private By byLanguageSvenska() {     return By.xpath(SELECT_LANGUAGE_SVENSKA_XPATH);      }
+    private By byLanguageEnglish() {     return By.xpath(SELECT_LANGUAGE_ENGLISH_XPATH);      }
     private By bySaveButton() {     return By.xpath(SAVE_BUTTON_XPATH);      }
 
-
-    private void selectLanguage(String arg0)  {
+    private void selectLanguage(String arg0) {
         if ("Suomi".equals(arg0))
-             WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'fi']")).click();
+             WebBrowser.getDriver().findElement(byLanguageSuomi()).click();
         if ("Svenska".equals(arg0))
-            WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'sv']")).click();
+            WebBrowser.getDriver().findElement(byLanguageSvenska()).click();
         if ("English".equals(arg0))
-            WebBrowser.getDriver().findElement(By.xpath("//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'en']")).click();
+            WebBrowser.getDriver().findElement(byLanguageEnglish()).click();
     }
 
     private void selectCurrency(String arg0) {}

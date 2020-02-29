@@ -1,6 +1,7 @@
 # new feature
 # Tags: optional
 
+@RegionalSettingsSetup
 Feature: Verification switching between pages
 
   Scenario: Verification switching between pages - bottom links
@@ -13,9 +14,9 @@ Feature: Verification switching between pages
     And I am on Main Page
     And I click "Create Account"
     Then Redirect to "Create Account"
-    And I am on Main Page
-    And I click "Login"
-    Then Redirect to "Login"
+   # And I am on Main Page
+   # And I click "Login"
+   # Then Redirect to "Login"
     And I am on Main Page
     When I click "About Us"
     Then Redirect to "About Us"

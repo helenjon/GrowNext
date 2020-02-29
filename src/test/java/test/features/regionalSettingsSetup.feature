@@ -1,6 +1,6 @@
 # new feature
 # Tags: optional
-@RegionalSettingsSetup
+#@RegionalSettingsSetup
 Feature: Regional Settings Setup
 
   Scenario: Checking setup Language
@@ -15,6 +15,6 @@ Feature: Regional Settings Setup
   Scenario: Checking setup Country
     Given I am on Home Page
     When I click to Change button
-    And Select Country "Taiwan" and Save o
+    And Select Country "Taiwan" and Save
     Then Header contains Country  "Suomi"
     And Home Page is translated t

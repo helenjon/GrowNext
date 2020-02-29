@@ -5,7 +5,6 @@ import test.pages.automationpracticeform.AutomationPracticeForm;
 import test.pages.facebook.LoginPage;
 import test.pages.litecart.CustomerServicePage;
 import test.pages.litecart.HomePageLiteCart;
-import test.pages.litecart.MainPage;
 import test.pages.litecart.RegionalSettingsPage;
 import test.utilities.MyLog;
 
@@ -28,8 +27,6 @@ public class PageFactory {
                 return new AutomationPracticeForm();
             case HomePageLiteCart.PAGE_IDENTIFIER:
                 return new HomePageLiteCart();
-            case MainPage.PAGE_IDENTIFIER:
-                return new MainPage();
             case CustomerServicePage.PAGE_IDENTIFIER:
                 return new CustomerServicePage();
             case RegionalSettingsPage.PAGE_IDENTIFIER:

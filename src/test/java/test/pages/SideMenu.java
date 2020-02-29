@@ -6,8 +6,14 @@ import webbrowser.WebBrowser;
 
 public class SideMenu {
 
-    public WebElement getTitle(){
-        return WebBrowser.getDriver().findElement(By.xpath("//div[@id='box-information-links']/*[@class ='title']"));
+    public static final String SIDE_MENU_TITLE = "//div[@id='box-information-links']/*[@class ='title']";
+
+    public WebElement getTitle() {
+        return WebBrowser.getDriver().findElement(bySideTitleMenu());
+    }
+
+    private By bySideTitleMenu() {
+        return By.xpath(SIDE_MENU_TITLE);
     }
 
 

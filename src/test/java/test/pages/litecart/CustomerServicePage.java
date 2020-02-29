@@ -1,7 +1,6 @@
 package test.pages.litecart;
 
 import test.pages.BasePage;
-import test.pages.PageFactory;
 import webbrowser.WebBrowser;
 
 public class CustomerServicePage extends BasePage {
@@ -14,6 +13,7 @@ public class CustomerServicePage extends BasePage {
     }
 
     public String getSideMenuTitle() {
+        WebBrowser.waitForElementToBeVisible(sideMenu.getTitle());
         return sideMenu.getTitle().getAttribute("textContent");
     }
 
