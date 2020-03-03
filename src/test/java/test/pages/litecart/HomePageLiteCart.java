@@ -10,7 +10,8 @@ import webbrowser.WebBrowser;
 public class HomePageLiteCart extends BasePage {
 
     public static final String PAGE_IDENTIFIER = "Home Page LiteCart";
-    public static final String REGIONAL_SETTINGS_POPUP_XPATH = "//div[@id='box-regional-settings']";
+    private static final String REGIONAL_SETTINGS_POPUP_XPATH = "//div[@id='box-regional-settings']";
+    private static final String POPULAR_PRODUCTS_LIST_XPATH = "//div[@id='box-popular-products']//a";
 
     RegionalSettingsSetup regionalSettings;
 
@@ -46,15 +47,13 @@ public class HomePageLiteCart extends BasePage {
         Assert.assertEquals(arg0, headerMenu.getPageLanguageValue());
     }
 
-//    public void Linkclick(String arg0) {
-//        List<WebElement> listLinks = bottomMenu.getListBottomLinks();
-//        for (WebElement element : listLinks) {
-//            if (element.getAttribute("textContent").equals(arg0)) {
-//                element.click();
-//                break;
-//            }
-//        }
-//    }
+    public void shoppingCartIsEmpty() {
+        Assert.assertEquals("0", headerMenu.getShoppingCartQuantity());
+    }
+
+    public void clickFirstLinkPopularProducts() {
+        WebBrowser.getDriver().findElement(byPopularProductsList()).click();
+    }
 
     public void Linkclick(String arg0) {
         bottomMenu.getBottomLink(arg0).click();
@@ -63,4 +62,10 @@ public class HomePageLiteCart extends BasePage {
     private By byRegionalSettingsPopUp() {
         return By.xpath(REGIONAL_SETTINGS_POPUP_XPATH);
     }
+
+    private By byPopularProductsList() {
+        return By.xpath(POPULAR_PRODUCTS_LIST_XPATH);
+    }
+
+
 }

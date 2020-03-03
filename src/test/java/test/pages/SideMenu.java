@@ -6,7 +6,7 @@ import webbrowser.WebBrowser;
 
 public class SideMenu {
 
-    public static final String SIDE_MENU_TITLE = "//div[@id='box-information-links']/*[@class ='title']";
+    private static final String SIDE_MENU_TITLE = "//div[@id='box-information-links']/*[@class ='title']";
 
     public WebElement getTitle() {
         return WebBrowser.getDriver().findElement(bySideTitleMenu());

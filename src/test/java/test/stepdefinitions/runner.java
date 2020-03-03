@@ -7,8 +7,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
         features = "src/test/java/test/features",
-        //  glue = {"test.stepdefinitions.seleniumWebDriver"}
-        glue = {"test.stepdefinitions"},
+        glue = {"test.stepdefinitions.litecartstepdef"},
         tags = {"@RegionalSettingsSetup"}
 )
 public class runner extends AbstractTestNGCucumberTests {

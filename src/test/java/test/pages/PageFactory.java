@@ -5,6 +5,7 @@ import test.pages.automationpracticeform.AutomationPracticeForm;
 import test.pages.facebook.LoginPage;
 import test.pages.litecart.CustomerServicePage;
 import test.pages.litecart.HomePageLiteCart;
+import test.pages.litecart.ProductCardPage;
 import test.pages.litecart.RegionalSettingsPage;
 import test.utilities.MyLog;
 
@@ -31,6 +32,8 @@ public class PageFactory {
                 return new CustomerServicePage();
             case RegionalSettingsPage.PAGE_IDENTIFIER:
                 return new RegionalSettingsPage();
+            case ProductCardPage.PAGE_IDENTIFIER:
+                return new ProductCardPage();
             default:
                 MyLog.error(new IllegalArgumentException(identifier + "is not found").getMessage());
                 throw new IllegalArgumentException(identifier + "is not found");

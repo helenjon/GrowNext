@@ -14,7 +14,6 @@ public class VerificationSwitchingBetweenPages {
     private HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
     private CustomerServicePage customerServicePage = (CustomerServicePage) PageFactory.getPageByIdentifier(CustomerServicePage.PAGE_IDENTIFIER);
 
-
     @Given("^I am on Main Page$")
     public void iAmOnMainPage() {
         homePageLiteCart.getPage();
@@ -25,13 +24,11 @@ public class VerificationSwitchingBetweenPages {
         homePageLiteCart.Linkclick(arg0);
     }
 
-
     @Then("^I was redirected to \"([^\"]*)\"$")
     public void iWasRedirectedTo(String arg0) {
         System.out.println(arg0 + "    " + customerServicePage.getSideMenuTitle());
         Assert.assertEquals(arg0, customerServicePage.getSideMenuTitle());
     }
-
 
     @Then("^Redirect to \"([^\"]*)\"$")
     public void redirectTo(String arg0) {

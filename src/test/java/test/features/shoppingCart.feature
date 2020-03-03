@@ -1,12 +1,12 @@
 # new feature
 # Tags: optional
 
-Feature: ShoppingCartFunctionality
+@RegionalSettingsSetup
+Feature: Shopping Cart Functionality
 
   Scenario: Add one item to cart
-    Given I am on Main Page
+    Given I am on My Main Page
     And Shopping Cart is empty
     And I click to first popular product
-    When I click "Add to Cart"
-    And go to Shopping Cart page
+    When click "Add to Cart" button
     Then selected item was added to Shopping Cart
