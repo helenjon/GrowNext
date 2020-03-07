@@ -17,6 +17,7 @@ public class Hooks {
     @After
     public void AfterSteps() {
         System.out.println("AFTER !!!!!!!!!!!!HOOKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        WebBrowser.getDriver().quit();
+        WebBrowser.quitDriver();
+
     }
 }

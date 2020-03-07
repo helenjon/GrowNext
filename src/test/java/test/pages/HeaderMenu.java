@@ -9,18 +9,7 @@ public class HeaderMenu {
     private static final String CHANGE_REGIONAL_SETTINGS_XPATH = "//div[@class='change']";
     private static final String REGIONAL_LANGUAGE_XPATH = ".//div[@id='region']/div[@class='language']";
     private static final String SHOPPING_CART_QUANTITY_XPATH = "//div[@id='cart']//span[@class='quantity']";
-
-    private By byButtonChange() {
-        return By.xpath(CHANGE_REGIONAL_SETTINGS_XPATH);
-    }
-
-    private By byRegionalLanguageChange() {
-        return By.xpath(REGIONAL_LANGUAGE_XPATH);
-    }
-
-    private By byShoppingCartQuantity() {
-        return By.xpath(SHOPPING_CART_QUANTITY_XPATH);
-    }
+    private static final String SHOPPING_CART_CHECKOUT_XPATH = "//div[@id='cart']";
 
     public WebElement getButtonChange() {
         return WebBrowser.getDriver().findElement(byButtonChange());
@@ -39,6 +28,27 @@ public class HeaderMenu {
         }
         return WebBrowser.getDriver().findElement(byShoppingCartQuantity()).getAttribute("textContent");
     }
+
+    public WebElement getShoppingCartItem(){
+            return WebBrowser.getDriver().findElement(byShoppingCartCheckOut());
+    }
+
+    private By byButtonChange() {
+        return By.xpath(CHANGE_REGIONAL_SETTINGS_XPATH);
+    }
+
+    private By byRegionalLanguageChange() {
+        return By.xpath(REGIONAL_LANGUAGE_XPATH);
+    }
+
+    private By byShoppingCartQuantity() {
+        return By.xpath(SHOPPING_CART_QUANTITY_XPATH);
+    }
+
+    private By byShoppingCartCheckOut(){
+        return By.xpath(SHOPPING_CART_CHECKOUT_XPATH);
+    }
+
 
 
 }

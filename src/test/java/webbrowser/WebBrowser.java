@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import test.utilities.ReadPropertyFile;
 
+import javax.annotation.Nonnull;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -23,10 +24,14 @@ public class WebBrowser {
 
     public static WebDriverWait waitHere;
     private static WebDriver driver;
+    private static String currentDriverName;
 
     public static WebDriver getDriver() {
         return driver;
     }
+    public static void quitDriver(){
+        driver.quit();
+        driver = null;}
 
     public static void initializationWebDriver() {
         Properties properties = ReadPropertyFile.getProperties();
@@ -43,6 +48,14 @@ public class WebBrowser {
     public static void waitForElementToBeVisible(WebElement element) {
         waitHere.until(ExpectedConditions.visibilityOf(element));
     }
+
+//    public static synchronized WebDriver getInstance(@Nonnull String driverName){
+//        if (driver == null ||  (!driverName.equalsIgnoreCase(currentDriverName)) ){
+//                currentDriverName = driverName;
+//                initBrowser(currentDriverName);
+//        }
+//        return driver;
+//    }
 
     private static void initBrowser(String driverName) {
         if (driver == null) {

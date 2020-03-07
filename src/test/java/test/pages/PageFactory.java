@@ -3,10 +3,7 @@ package test.pages;
 import org.openqa.selenium.WebDriverException;
 import test.pages.automationpracticeform.AutomationPracticeForm;
 import test.pages.facebook.LoginPage;
-import test.pages.litecart.CustomerServicePage;
-import test.pages.litecart.HomePageLiteCart;
-import test.pages.litecart.ProductCardPage;
-import test.pages.litecart.RegionalSettingsPage;
+import test.pages.litecart.*;
 import test.utilities.MyLog;
 
 public class PageFactory {
@@ -34,6 +31,8 @@ public class PageFactory {
                 return new RegionalSettingsPage();
             case ProductCardPage.PAGE_IDENTIFIER:
                 return new ProductCardPage();
+            case ShoppingCart.PAGE_IDENTIFIER:
+                return new ShoppingCart();
             default:
                 MyLog.error(new IllegalArgumentException(identifier + "is not found").getMessage());
                 throw new IllegalArgumentException(identifier + "is not found");

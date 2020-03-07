@@ -1,6 +1,6 @@
 # new feature
 # Tags: optional
-#@RegionalSettingsSetup
+
 Feature: Regional Settings Setup
 
   Scenario: Checking setup Language

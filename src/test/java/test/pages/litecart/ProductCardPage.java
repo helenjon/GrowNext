@@ -33,6 +33,10 @@ public class ProductCardPage extends BasePage {
         return headerMenu.getShoppingCartQuantity();
     }
 
+    public void openCheckOutPage(){
+            headerMenu.getShoppingCartItem().click();
+    }
+
 
     private By bySizeSelectDropdown() {
         return By.xpath(SIZE_SELECT_DROPDOWN_XPATH);

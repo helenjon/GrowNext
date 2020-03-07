@@ -1,7 +1,6 @@
 # new feature
 # Tags: optional
 
-@RegionalSettingsSetup
 Feature: Verification switching between pages
 
   Scenario: Verification switching between pages - bottom links
