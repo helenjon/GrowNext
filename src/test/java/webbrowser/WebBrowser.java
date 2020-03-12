@@ -26,12 +26,16 @@ public class WebBrowser {
     private static WebDriver driver;
     private static String currentDriverName;
 
+    protected static ThreadLocal<WebDriver> wbdriver = new ThreadLocal<WebDriver>();
+
     public static WebDriver getDriver() {
-        return driver;
+        return wbdriver.get() ;
     }
+
     public static void quitDriver(){
-        driver.quit();
-        driver = null;}
+        wbdriver.get().quit();
+        wbdriver.set(null); //driver = null
+         }
 
     public static void initializationWebDriver() {
         Properties properties = ReadPropertyFile.getProperties();
@@ -63,18 +67,22 @@ public class WebBrowser {
                 case "chrome":
                     WebDriverManager.getInstance(CHROME).setup();
                     driver = new ChromeDriver();
+                    wbdriver.set(driver);
                     break;
                 case "firefox":
                     WebDriverManager.getInstance(FIREFOX).setup();
                     driver = new FirefoxDriver();
+                    wbdriver.set(driver);
                     break;
                 case "ie":
                     WebDriverManager.getInstance(IEXPLORER).setup();
                     driver = new InternetExplorerDriver();
+                    wbdriver.set(driver);
                     break;
                 case "edge":
                     WebDriverManager.getInstance(EDGE).setup();
                     driver = new EdgeDriver();
+                    wbdriver.set(driver);
                     break;
                 default:
                     throw new IllegalArgumentException(String.format("Driver '%s' is not found", driverName));
