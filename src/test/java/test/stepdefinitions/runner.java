@@ -10,8 +10,8 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
 
         features = "src/test/resources/features",
-        glue = {"test.stepdefinitions"},
-        tags = {"@RegionalSettingsSetup"}
+        glue = {"test.stepdefinitions"}
+       // tags = {"@RegionalSettingsSetup"}
 )
 public class runner extends AbstractTestNGCucumberTests  {
 
