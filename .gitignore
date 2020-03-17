@@ -3,3 +3,4 @@
 .idea/
 target/
 src/test/java/test/pages/test/test.java
+allure-results/
