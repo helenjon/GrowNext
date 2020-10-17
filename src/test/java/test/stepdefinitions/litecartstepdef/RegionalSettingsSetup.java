@@ -42,7 +42,7 @@ public class RegionalSettingsSetup {
 
     @Then("^Header contains Language \"([^\"]*)\"$")
     public void headerContainsLanguage(String arg0) {
-        homePageLiteCart.CheckForSetupRegionalSetings(arg0);
+        homePageLiteCart.CheckForSetupRegionalSetingsLanguage(arg0);
     }
 
     @And("^Home Page has url \"([^\"]*)\"$")
@@ -51,4 +51,8 @@ public class RegionalSettingsSetup {
     }
 
 
+    @Then("Header contains Country {string}")
+    public void headerContainsCountry(String arg0) {
+        homePageLiteCart.CheckForSetupRegionalSetingsCountry(arg0);
+    }
 }

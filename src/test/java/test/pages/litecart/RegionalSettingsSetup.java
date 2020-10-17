@@ -16,6 +16,7 @@ public class RegionalSettingsSetup  {
     private static final String SELECT_LANGUAGE_SUOMI_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'fi']";
     private static final String SELECT_LANGUAGE_SVENSKA_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'sv']";
     private static final String SELECT_LANGUAGE_ENGLISH_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'en']";
+    private static final String COUNTRY_NAME_XPATH = "//select[@name='country_code']/option[.= '%s' ]";
 
     public void selectDropdown(String arg0) {
         dropdownCase = arg0;
