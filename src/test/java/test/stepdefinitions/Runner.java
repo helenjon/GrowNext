@@ -8,18 +8,17 @@ import org.testng.annotations.DataProvider;
 
 
 @CucumberOptions(
-
-        features = "src/test/resources/features",
-        glue = {"test.stepdefinitions"}
-       // tags = {"@RegionalSettingsSetup"}
+        features = "src/test/resources/features/",
+        glue = "test/stepdefinitions"
+     //   plugin = {"html:target/cucumber/runner.html"}
+     //   tags = {"@RegionalSettingsSetup"}
 )
-public class runner extends AbstractTestNGCucumberTests  {
+public class Runner extends AbstractTestNGCucumberTests  {
 
     @Override
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
     }
-
 }
 
