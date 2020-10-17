@@ -38,7 +38,6 @@ public class PageFactory {
                 throw new IllegalArgumentException(identifier + "is not found");
         }
     }
-
 }
 
 

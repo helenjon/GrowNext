@@ -11,8 +11,8 @@ import webbrowser.WebBrowser;
 
 public class VerificationSwitchingBetweenPages {
 
-    private HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
-    private CustomerServicePage customerServicePage = (CustomerServicePage) PageFactory.getPageByIdentifier(CustomerServicePage.PAGE_IDENTIFIER);
+    private final HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
+    private final CustomerServicePage customerServicePage = (CustomerServicePage) PageFactory.getPageByIdentifier(CustomerServicePage.PAGE_IDENTIFIER);
 
     @Given("^I am on Main Page$")
     public void iAmOnMainPage() {

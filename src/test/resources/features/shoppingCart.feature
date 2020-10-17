@@ -1,6 +1,3 @@
-# new feature
-# Tags: optional
-
 Feature: Shopping Cart Functionality
 
   Scenario: Add one item to cart

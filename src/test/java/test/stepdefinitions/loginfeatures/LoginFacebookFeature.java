@@ -9,7 +9,7 @@ import test.pages.PageFactory;
 
 public class LoginFacebookFeature {
 
-    private LoginPage loginPage = (LoginPage) PageFactory.getPageByIdentifier(LoginPage.PAGE_IDENTIFIER);
+    private final LoginPage loginPage = (LoginPage) PageFactory.getPageByIdentifier(LoginPage.PAGE_IDENTIFIER);
 
     @Given("^I am on the facebook \"([^\"]*)\" one$")
     public void iAmOnTheFacebookOne(String arg0) {
@@ -17,7 +17,7 @@ public class LoginFacebookFeature {
 
     @When("^I fill in Email \"([^\"]*)\" and Password \"([^\"]*)\"$")
     public void iFillInEmailAndPassword(String arg0, String arg1)  {
-       loginPage.fillINEmailPass(arg0, arg1); }
+       loginPage.fillInEmailPass(arg0, arg1); }
 
     @And("^I click login$")
     public void iClickLogin() {

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import test.utilities.MyLog;
 import webbrowser.WebBrowser;
 
+import java.util.List;
+
 public class RegionalSettingsSetup  {
 
     private String dropdownCase;
@@ -16,6 +18,7 @@ public class RegionalSettingsSetup  {
     private static final String SELECT_LANGUAGE_SUOMI_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'fi']";
     private static final String SELECT_LANGUAGE_SVENSKA_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'sv']";
     private static final String SELECT_LANGUAGE_ENGLISH_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'en']";
+    private static final String SELECT_COUNTRIE_LIST_XPATH = "//form[@name='region_form']//select[@name = 'country_code']/option";
 
     public void selectDropdown(String arg0) {
         dropdownCase = arg0;
@@ -64,6 +67,8 @@ public class RegionalSettingsSetup  {
     private By byLanguageSvenska() {     return By.xpath(SELECT_LANGUAGE_SVENSKA_XPATH);      }
     private By byLanguageEnglish() {     return By.xpath(SELECT_LANGUAGE_ENGLISH_XPATH);      }
     private By bySaveButton() {     return By.xpath(SAVE_BUTTON_XPATH);      }
+    private By byCountryList() { return  By.xpath(SELECT_COUNTRIE_LIST_XPATH);}
+
 
     private void selectLanguage(String arg0) {
         if ("Suomi".equals(arg0))
@@ -76,7 +81,14 @@ public class RegionalSettingsSetup  {
 
     private void selectCurrency(String arg0) {}
 
-    private void selectCountry(String arg0) {}
+    private void selectCountry(String arg0) {
+        List<WebElement> availableCountries = WebBrowser.getDriver().findElements(byCountryList());
+        for (WebElement availableCountry:availableCountries)
+              {
+                  if (availableCountry.getAttribute("innerText").matches(arg0))
+                  availableCountry.click();
+              }
+    }
 
     private void selectZip(String arg0) {}
 

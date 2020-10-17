@@ -43,9 +43,14 @@ public class HomePageLiteCart extends BasePage {
         regionalSettings.getSaveButton().click();
     }
 
-    public void CheckForSetupRegionalSetings(String arg0) {
+    public void CheckForSetupRegionalSetingsPageLanguage(String arg0) {
         Assert.assertEquals(arg0, headerMenu.getPageLanguageValue());
     }
+
+    public void CheckForSetupRegionalSetingsPageCountry(String arg0) {
+        Assert.assertEquals(arg0, headerMenu.getPageCountyValue());
+    }
+
 
     public void shoppingCartIsEmpty() {
         Assert.assertEquals("0", headerMenu.getShoppingCartQuantity());

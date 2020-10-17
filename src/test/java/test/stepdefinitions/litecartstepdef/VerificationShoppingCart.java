@@ -12,9 +12,9 @@ import test.pages.litecart.ShoppingCart;
 
 public class VerificationShoppingCart {
 
-    private HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
-    private ProductCardPage productCardPage = (ProductCardPage) PageFactory.getPageByIdentifier(ProductCardPage.PAGE_IDENTIFIER);
-    private ShoppingCart shoppingCart = (ShoppingCart) PageFactory.getPageByIdentifier(ShoppingCart.PAGE_IDENTIFIER);
+    private final HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
+    private final ProductCardPage productCardPage = (ProductCardPage) PageFactory.getPageByIdentifier(ProductCardPage.PAGE_IDENTIFIER);
+    private final ShoppingCart shoppingCart = (ShoppingCart) PageFactory.getPageByIdentifier(ShoppingCart.PAGE_IDENTIFIER);
 
     @Given("^I am on My Main Page$")
     public void iAmOnMyMainPage() {
