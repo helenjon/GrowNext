@@ -1,6 +1,5 @@
 Feature: Login section
 
-
   Scenario: Successfully Login to Website
     Given I am on the facebook "http://facebook.com" one
     When I fill in Email "XXXX.WWWW@gmail.com" and Password "WWWWW"

@@ -1,6 +1,5 @@
 package test.stepdefinitions;
 
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -19,6 +18,5 @@ public class Hooks {
     public void AfterSteps() {
         System.out.println("AFTER !!!!!!!!!!!!HOOKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         WebBrowser.quitDriver();
-
     }
 }

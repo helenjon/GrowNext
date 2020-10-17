@@ -10,7 +10,11 @@ public class HeaderMenu {
     private static final String REGIONAL_LANGUAGE_XPATH = ".//div[@id='region']/div[@class='language']";
     private static final String SHOPPING_CART_QUANTITY_XPATH = "//div[@id='cart']//span[@class='quantity']";
     private static final String SHOPPING_CART_CHECKOUT_XPATH = "//div[@id='cart']";
+<<<<<<< HEAD
     private static final String REGIONAL_COUNTRY_XPATH = "//div[@class='country']/img";
+=======
+    private static final String REGIONAL_COUNTRY_XPATH = "//div[@class = 'country']/img";
+>>>>>>> 7aa6e2f16c03343fce8dc9095840fd25286d45aa
 
     public WebElement getButtonChange() {
         return WebBrowser.getDriver().findElement(byButtonChange());
@@ -20,8 +24,13 @@ public class HeaderMenu {
         return WebBrowser.getDriver().findElement(byRegionalLanguageChange()).getAttribute("textContent");
     }
 
+<<<<<<< HEAD
     public String getPageCountryValue(){
         return WebBrowser.getDriver().findElement(byRegionalCountryValue()).getAttribute("title");
+=======
+    public String getPageCountyValue() {
+        return WebBrowser.getDriver().findElement(byRegionalCountryChange()).getAttribute("title");
+>>>>>>> 7aa6e2f16c03343fce8dc9095840fd25286d45aa
     }
 
     public String getShoppingCartQuantity() {
@@ -32,6 +41,10 @@ public class HeaderMenu {
             e.printStackTrace();
         }
         return WebBrowser.getDriver().findElement(byShoppingCartQuantity()).getAttribute("textContent");
+    }
+
+    public String getRegionalCountryValue() {
+        return  WebBrowser.getDriver().findElement(byRegionalCountryChange()).getAttribute("title");
     }
 
     public WebElement getShoppingCartItem(){
@@ -54,7 +67,11 @@ public class HeaderMenu {
         return By.xpath(SHOPPING_CART_CHECKOUT_XPATH);
     }
 
+<<<<<<< HEAD
     private By byRegionalCountryValue(){ return By.xpath(REGIONAL_COUNTRY_XPATH);}
+=======
+    private By byRegionalCountryChange() { return By.xpath(REGIONAL_COUNTRY_XPATH);}
+>>>>>>> 7aa6e2f16c03343fce8dc9095840fd25286d45aa
 
 
 

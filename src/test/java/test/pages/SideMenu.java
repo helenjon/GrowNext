@@ -15,6 +15,4 @@ public class SideMenu {
     private By bySideTitleMenu() {
         return By.xpath(SIDE_MENU_TITLE);
     }
-
-
 }

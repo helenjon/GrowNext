@@ -23,20 +23,23 @@ import static io.github.bonigarcia.wdm.DriverManagerType.IEXPLORER;
 
 public class WebBrowser {
 
-    public static WebDriverWait waitHere;
+    public  static WebDriverWait waitHere;
     private static WebDriver driver;
     private static String currentDriverName;
 
-    protected static ThreadLocal<WebDriver> wbdriver = new ThreadLocal<WebDriver>();
+    protected static final ThreadLocal<WebDriver> webdriver = new ThreadLocal<WebDriver>();
+
 
     public static WebDriver getDriver() {
-        return wbdriver.get() ;
+        return webdriver.get() ;
     }
 
-    public static void quitDriver(){
-        wbdriver.get().quit();
-        wbdriver.set(null); //driver = null
-         }
+
+    public static void quitDriver() {
+        webdriver.get().quit();
+        webdriver.remove(); //driver = null
+
+    }
 
     public static void initializationWebDriver() {
         Properties properties = ReadPropertyFile.getProperties();
@@ -54,13 +57,13 @@ public class WebBrowser {
         waitHere.until(ExpectedConditions.visibilityOf(element));
     }
 
-//    public static synchronized WebDriver getInstance(@Nonnull String driverName){
-//        if (driver == null ||  (!driverName.equalsIgnoreCase(currentDriverName)) ){
-//                currentDriverName = driverName;
-//                initBrowser(currentDriverName);
-//        }
-//        return driver;
-//    }
+    public static synchronized WebDriver getInstance(@Nonnull String driverName) {
+        if (driver == null || (!driverName.equalsIgnoreCase(currentDriverName))) {
+            currentDriverName = driverName;
+            initBrowser(currentDriverName);
+        }
+        return driver;
+    }
 
     private static void initBrowser(String driverName) {
         if (driver == null) {
@@ -68,22 +71,22 @@ public class WebBrowser {
                 case "chrome":
                     WebDriverManager.getInstance(CHROME).setup();
                     driver = new ChromeDriver();
-                    wbdriver.set(driver);
+                    webdriver.set(driver);
                     break;
                 case "firefox":
                     WebDriverManager.getInstance(FIREFOX).setup();
                     driver = new FirefoxDriver();
-                    wbdriver.set(driver);
+                     webdriver.set(driver);
                     break;
                 case "ie":
                     WebDriverManager.getInstance(IEXPLORER).setup();
                     driver = new InternetExplorerDriver();
-                    wbdriver.set(driver);
+                    webdriver.set(driver);
                     break;
                 case "edge":
                     WebDriverManager.getInstance(EDGE).setup();
                     driver = new EdgeDriver();
-                    wbdriver.set(driver);
+                    webdriver.set(driver);
                     break;
                 default:
                     throw new IllegalArgumentException(String.format("Driver '%s' is not found", driverName));

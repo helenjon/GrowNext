@@ -10,7 +10,7 @@ import test.pages.litecart.HomePageLiteCart;
 
 public class RegionalSettingsSetup {
 
-    private HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
+    private final HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
 
 
     @Given("^I am on Home Page$")
@@ -42,7 +42,16 @@ public class RegionalSettingsSetup {
 
     @Then("^Header contains Language \"([^\"]*)\"$")
     public void headerContainsLanguage(String arg0) {
+<<<<<<< HEAD
         homePageLiteCart.CheckForSetupRegionalSetingsLanguage(arg0);
+=======
+        homePageLiteCart.CheckForSetupRegionalSetingsPageLanguage(arg0);
+    }
+
+    @Then("^Header contains Country \"([^\"]*)\"$")
+    public void headerContainsCountry(String arg0) {
+        homePageLiteCart.CheckForSetupRegionalSetingsPageCountry(arg0);
+>>>>>>> 7aa6e2f16c03343fce8dc9095840fd25286d45aa
     }
 
     @And("^Home Page has url \"([^\"]*)\"$")
@@ -50,9 +59,12 @@ public class RegionalSettingsSetup {
 
     }
 
+<<<<<<< HEAD
 
     @Then("Header contains Country {string}")
     public void headerContainsCountry(String arg0) {
         homePageLiteCart.CheckForSetupRegionalSetingsCountry(arg0);
     }
+=======
+>>>>>>> 7aa6e2f16c03343fce8dc9095840fd25286d45aa
 }

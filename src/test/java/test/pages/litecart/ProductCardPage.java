@@ -2,7 +2,6 @@ package test.pages.litecart;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import test.pages.BasePage;
 import webbrowser.WebBrowser;
 
@@ -21,12 +20,10 @@ public class ProductCardPage extends BasePage {
 
     public void itemAddToCard() {
         String rez = checkSizePresent();
-        if ("NO".equals(rez)) {
-            WebBrowser.getDriver().findElement(byAddToCardButton()).click();
-        } else {
+        if (!"NO".equals(rez)) {
             WebBrowser.getDriver().findElement(By.xpath(".//div[@class='buy_now']//select[@name='options[Size]']/option[2]")).click();
-            WebBrowser.getDriver().findElement(byAddToCardButton()).click();
         }
+        WebBrowser.getDriver().findElement(byAddToCardButton()).click();
     }
 
     public String getSoppingCartQuantity() {
