@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 
         features = "src/test/resources/features",
         glue = {"test.stepdefinitions"}
-     //   tags = {"@RegionalSettingsSetup"}
+       // tags = {"@RegionalSettingsSetup"}
 )
 public class runner extends AbstractTestNGCucumberTests  {
 
