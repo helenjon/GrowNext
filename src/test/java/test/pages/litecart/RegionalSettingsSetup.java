@@ -17,9 +17,12 @@ public class RegionalSettingsSetup {
     private static final String SELECT_LANGUAGE_SUOMI_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'fi']";
     private static final String SELECT_LANGUAGE_SVENSKA_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'sv']";
     private static final String SELECT_LANGUAGE_ENGLISH_XPATH = "//form[@name='region_form']//select[@name = 'language_code']/option[@value = 'en']";
-    private static final String SELECT_COUNTRY_LIST_XPATH = "//form[@name='region_form']//select[@name = 'country_code']/option";
+    private static final String COUNTRY_NAME_XPATH = "//select[@name='country_code']/option[.= '%s' ]";
+    private static final String SELECT_COUNTRIES_LIST_XPATH = "//form[@name='region_form']//select[@name = 'country_code']/option";
 
     private String dropdownCase;
+
+
 
     public void selectDropdown(String arg0) {
         dropdownCase = arg0;
@@ -93,7 +96,7 @@ public class RegionalSettingsSetup {
     }
 
     private By byCountryList() {
-        return By.xpath(SELECT_COUNTRY_LIST_XPATH);
+        return By.xpath(SELECT_COUNTRIES_LIST_XPATH);
     }
 
     private void selectLanguage(String arg0) {
