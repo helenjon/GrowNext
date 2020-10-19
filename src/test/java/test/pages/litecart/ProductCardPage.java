@@ -8,10 +8,10 @@ import webbrowser.WebBrowser;
 public class ProductCardPage extends BasePage {
 
     public static final String PAGE_IDENTIFIER = "Product Card Page";
+
     private static final String ADD_TO_CARD_BUTTON_XPATH = ".//button[@name='add_cart_product']";
     private static final String SIZE_SELECT_DROPDOWN_XPATH = ".//div[@class='buy_now']//select[@name='options[Size]']";
     private static final String SELECT_FIRST_ITEM_FROM_DROPDOWN = ".//div[@class='buy_now']//select[@name='options[Size]']/option[2]";
-
 
     @Override
     public void getPage() {

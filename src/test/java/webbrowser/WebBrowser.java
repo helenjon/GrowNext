@@ -10,8 +10,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import test.utilities.ReadPropertyFile;
-
-
 import javax.annotation.Nonnull;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -23,29 +21,28 @@ import static io.github.bonigarcia.wdm.DriverManagerType.IEXPLORER;
 
 public class WebBrowser {
 
-    public  static WebDriverWait waitHere;
+    public static WebDriverWait waitHere;
+
     private static WebDriver driver;
     private static String currentDriverName;
 
-    protected static final ThreadLocal<WebDriver> webdriver = new ThreadLocal<WebDriver>();
-
+    protected static final ThreadLocal<WebDriver> webdriver = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
-        return webdriver.get() ;
+        return webdriver.get();
     }
-
 
     public static void quitDriver() {
         webdriver.get().quit();
-        webdriver.remove(); //driver = null
-
+        /** driver = null */
+        webdriver.remove();
     }
 
     public static void initializationWebDriver() {
         Properties properties = ReadPropertyFile.getProperties();
         String driverName = properties.getProperty("browser");
         initBrowser(driverName);
-        //Perform Basic Operations
+        /** Perform Basic Operations  */
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Integer.parseInt(properties.getProperty("implicitlyWait")), TimeUnit.SECONDS);
@@ -76,7 +73,7 @@ public class WebBrowser {
                 case "firefox":
                     WebDriverManager.getInstance(FIREFOX).setup();
                     driver = new FirefoxDriver();
-                     webdriver.set(driver);
+                    webdriver.set(driver);
                     break;
                 case "ie":
                     WebDriverManager.getInstance(IEXPLORER).setup();

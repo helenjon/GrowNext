@@ -9,11 +9,12 @@ public class BottomMenu {
 
     private static final String BOTTOM_LINK_XPATH_PART = "//footer//a[text()='%s']";
 
+    public WebElement getBottomLink(String arg0) {
+        return WebBrowser.getDriver().findElement(byBottomLinkXpath(arg0));
+    }
+
     private By byBottomLinkXpath(String arg0) {
         return By.xpath(String.format("//footer//a[text()='%s']", arg0));
     }
 
-    public WebElement getBottomLink(String arg0) {
-        return WebBrowser.getDriver().findElement(byBottomLinkXpath(arg0));
-    }
 }

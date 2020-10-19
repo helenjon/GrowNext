@@ -13,19 +13,21 @@ public class LoginFacebookFeature {
 
     @Given("^I am on the facebook \"([^\"]*)\" one$")
     public void iAmOnTheFacebookOne(String arg0) {
-        loginPage.getURL(arg0); }
+        loginPage.getURL(arg0);
+    }
 
     @When("^I fill in Email \"([^\"]*)\" and Password \"([^\"]*)\"$")
-    public void iFillInEmailAndPassword(String arg0, String arg1)  {
-       loginPage.fillInEmailPass(arg0, arg1); }
+    public void iFillInEmailAndPassword(String arg0, String arg1) {
+        loginPage.fillInEmailPass(arg0, arg1);
+    }
 
     @And("^I click login$")
     public void iClickLogin() {
-        loginPage.clickLogin(); }
+        loginPage.clickLogin();
+    }
 
     @Then("^I am on main page$")
     public void iAmOnMainPage() {
         System.out.println("HELLO");
     }
-
 }

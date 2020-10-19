@@ -11,8 +11,8 @@ public class ReadPropertyFile {
     public static Properties getProperties (){
         try {
             properties = new Properties();
-            FileInputStream fileinput = new FileInputStream("src\\test\\resources\\config\\config.properties");
-            properties.load(fileinput);
+            FileInputStream fileInput = new FileInputStream("src\\test\\resources\\config\\config.properties");
+            properties.load(fileInput);
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -20,13 +20,13 @@ public class LoginPage extends BasePage {
     }
 
     public void fillInEmailPass(String email, String password) {
-        WebElement emailw;
+        WebElement emailElement;
         WebElement pass;
-        emailw =WebBrowser.getDriver().findElement(By.id("email"));
+        emailElement =WebBrowser.getDriver().findElement(By.id("email"));
         pass = WebBrowser.getDriver().findElement(By.id("pass"));
-        emailw.clear();
+        emailElement.clear();
         pass.clear();
-        emailw.sendKeys(email);
+        emailElement.sendKeys(email);
         pass.sendKeys(password);
     }
 

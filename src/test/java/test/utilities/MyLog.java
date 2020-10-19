@@ -4,12 +4,12 @@ import org.apache.log4j.Logger;
 
 public class MyLog {
 
-    //Initialize Log4j logs
+    /**Initialize Log4j logs */
     private static final Logger Log = Logger.getLogger(MyLog.class.getName());
 
 
 
-    // This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
+    /** This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite */
     public static void startTestCase(String sTestCaseName){
 
         Log.info("****************************************************************************************");

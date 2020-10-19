@@ -21,7 +21,7 @@ public class VerificationSwitchingBetweenPages {
 
     @When("^I click \"([^\"]*)\"$")
     public void iClick(String arg0) {
-        homePageLiteCart.Linkclick(arg0);
+        homePageLiteCart.LinkClick(arg0);
     }
 
     @Then("^I was redirected to \"([^\"]*)\"$")

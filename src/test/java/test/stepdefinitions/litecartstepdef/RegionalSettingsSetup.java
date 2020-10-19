@@ -7,11 +7,9 @@ import io.cucumber.java.en.When;
 import test.pages.PageFactory;
 import test.pages.litecart.HomePageLiteCart;
 
-
 public class RegionalSettingsSetup {
 
     private final HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
-
 
     @Given("^I am on Home Page$")
     public void iAmOnHomePage() {
@@ -20,14 +18,13 @@ public class RegionalSettingsSetup {
 
     @When("^I click to Change button$")
     public void iClickToButton() {
-        homePageLiteCart.openRegionlSettings();
+        homePageLiteCart.openRegionalSettings();
     }
 
     @And("^I click on \"([^\"]*)\" dropdown$")
     public void iClickOnDropdown(String arg0) {
         homePageLiteCart.setRegionalSettingsDropdown(arg0);
     }
-
 
     @And("^I select \"([^\"]*)\"$")
     public void iSelect(String arg0) {
@@ -42,12 +39,12 @@ public class RegionalSettingsSetup {
 
     @Then("^Header contains Language \"([^\"]*)\"$")
     public void headerContainsLanguage(String arg0) {
-        homePageLiteCart.CheckForSetupRegionalSetingsPageLanguage(arg0);
+        homePageLiteCart.CheckForSetupRegionalSettingsPageLanguage(arg0);
     }
 
     @Then("^Header contains Country \"([^\"]*)\"$")
     public void headerContainsCountry(String arg0) {
-        homePageLiteCart.CheckForSetupRegionalSetingsPageCountry(arg0);
+        homePageLiteCart.CheckForSetupRegionalSettingsPageCountry(arg0);
     }
 
     @And("^Home Page has url \"([^\"]*)\"$")

@@ -7,9 +7,11 @@ import test.pages.BasePage;
 import webbrowser.WebBrowser;
 
 public class AutomationPracticeForm extends BasePage {
+
+    public static final String PAGE_IDENTIFIER = "Automation Practice Form";
+
     private static final String INPUT_XPATH = "//input[@value='%s']";
     private static final String URL = "https://www.toolsqa.com/automation-practice-form/";
-    public static final String PAGE_IDENTIFIER = "Automation Practice Form";
 
     @Override
     public void getPage() {
@@ -25,5 +27,6 @@ public class AutomationPracticeForm extends BasePage {
         Actions actions = new Actions(WebBrowser.getDriver());
         actions.moveToElement(element);
         element.click();
+
     }
 }

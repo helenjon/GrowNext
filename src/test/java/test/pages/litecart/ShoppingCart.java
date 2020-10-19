@@ -11,7 +11,6 @@ public class ShoppingCart extends BasePage {
 
     private static final String BUTTON_REMOVE_CART_ITEM_XPATH = "//button[@name='remove_cart_item']";
     private static final String NO_ITEM_INFO = "//div[@id='box-checkout']//em";
-    //private static final String
 
     @Override
     public void getPage() {
@@ -34,8 +33,5 @@ public class ShoppingCart extends BasePage {
     private By byNoItemCheck(){
         return By.xpath(NO_ITEM_INFO);
     }
-
-
-
 
 }

@@ -59,7 +59,4 @@ public class HeaderMenu {
     }
 
     private By byRegionalCountryChange() { return By.xpath(REGIONAL_COUNTRY_XPATH);}
-
-
-
 }
