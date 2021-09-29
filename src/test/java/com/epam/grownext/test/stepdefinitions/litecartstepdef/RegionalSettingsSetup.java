@@ -1,5 +1,7 @@
 package com.epam.grownext.test.stepdefinitions.litecartstepdef;
 
+import io.cucumber.core.api.Scenario;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,6 +12,13 @@ import com.epam.grownext.test.pages.litecart.HomePageLiteCart;
 public class RegionalSettingsSetup {
 
     private final HomePageLiteCart homePageLiteCart = (HomePageLiteCart) PageFactory.getPageByIdentifier(HomePageLiteCart.PAGE_IDENTIFIER);
+
+    public static String name ;
+
+    @Before
+    public void before(Scenario scenario) {
+        name = scenario.getName();
+    }
 
     @Given("^I am on Home Page$")
     public void iAmOnHomePage() {

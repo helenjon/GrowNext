@@ -38,7 +38,7 @@ public class VerificationShoppingCart {
 
     @Then("^selected item was added to Shopping Cart$")
     public void selectedItemWasAddedToShoppingCart() {
-        Assert.assertEquals(productCardPage.getSoppingCartQuantity(), "1");
+        Assert.assertEquals(productCardPage.checkForQuantity(), "1");
     }
 
     @And("^open Shopping Card page$")

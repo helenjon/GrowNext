@@ -24,7 +24,7 @@ public class HomePageLiteCart extends BasePage {
         headerMenu.getButtonChange().click();
         regionalSettings = new RegionalSettingsSetup();
         WebBrowser.waitForElementToBeVisible(WebBrowser.getDriver().findElement(byRegionalSettingsPopUp()));
-        //MyLog.info(WebBrowser.driver.findElement(By.id("box-regional-settings")).getText());
+        MyLog.info(WebBrowser.getDriver().findElement(By.id("box-regional-settings")).getText());
     }
 
     public void setRegionalSettingsDropdown(String arg0) {
@@ -50,9 +50,9 @@ public class HomePageLiteCart extends BasePage {
         Assert.assertEquals(arg0, headerMenu.getPageCountryValue());
     }
 
-    public void CheckForSetupRegionalSettingsPageCountry(String arg0) {
-        Assert.assertEquals(arg0, headerMenu.getPageCountryValue());
-    }
+//    public void CheckForSetupRegionalSettingsPageCountry(String arg0) {
+//        Assert.assertEquals(arg0, headerMenu.getPageCountryValue());
+//    }
 
     public void shoppingCartIsEmpty() {
         Assert.assertEquals("0", headerMenu.getShoppingCartQuantity());

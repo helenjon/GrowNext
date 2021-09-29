@@ -1,10 +1,10 @@
 package com.epam.grownext.test.pages.automationpracticeform;
 
+import com.epam.grownext.test.pages.BasePage;
+import com.epam.grownext.webbrowser.WebBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import com.epam.grownext.test.pages.BasePage;
-import com.epam.grownext.webbrowser.WebBrowser;
 
 public class AutomationPracticeForm extends BasePage {
 
@@ -27,6 +27,5 @@ public class AutomationPracticeForm extends BasePage {
         Actions actions = new Actions(WebBrowser.getDriver());
         actions.moveToElement(element);
         element.click();
-
     }
 }

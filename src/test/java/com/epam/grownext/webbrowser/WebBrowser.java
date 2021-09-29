@@ -20,8 +20,6 @@ public class WebBrowser {
 
     public static WebDriverWait waitHere;
 
-    private static String currentDriverName;
-
     protected static final ThreadLocal<WebDriver> webdriver = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
@@ -52,14 +50,6 @@ public class WebBrowser {
     public static void waitForElementToBeVisible(WebElement element) {
         waitHere.until(ExpectedConditions.visibilityOf(element));
     }
-
-//    public static synchronized WebDriver getInstance(@Nonnull String driverName) {
-//        if (driver == null || (!driverName.equalsIgnoreCase(currentDriverName))) {
-//            currentDriverName = driverName;
-//            initBrowser(currentDriverName);
-//        }
-//        return driver;
-//    }
 
     private static void initBrowser(String driverName) {
         if (webdriver.get() == null) {
