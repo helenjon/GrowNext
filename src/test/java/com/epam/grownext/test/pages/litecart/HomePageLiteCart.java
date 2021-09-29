@@ -24,7 +24,7 @@ public class HomePageLiteCart extends BasePage {
         headerMenu.getButtonChange().click();
         regionalSettings = new RegionalSettingsSetup();
         WebBrowser.waitForElementToBeVisible(WebBrowser.getDriver().findElement(byRegionalSettingsPopUp()));
-        //MyLog.info(WebBrowser.driver.findElement(By.id("box-regional-settings")).getText());
+        MyLog.info(WebBrowser.getDriver().findElement(By.id("box-regional-settings")).getText());
     }
 
     public void setRegionalSettingsDropdown(String arg0) {

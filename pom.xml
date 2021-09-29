@@ -28,7 +28,7 @@
                             <value>${project.build.directory}/allure-results</value>
                         </property>
                         <argLine>
-                            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                           -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         </argLine>
                     </systemProperties>
                     <includes>
@@ -114,5 +114,6 @@
             <artifactId>log4j</artifactId>
             <version>1.2.16</version>
         </dependency>
+
     </dependencies>
 </project>

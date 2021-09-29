@@ -30,6 +30,10 @@ public class ProductCardPage extends BasePage {
         return headerMenu.getShoppingCartQuantity();
     }
 
+    public String checkForQuantity(){
+        return headerMenu.checkQuantityWasUpdated();
+    }
+
     public void openCheckOutPage(){
             headerMenu.getShoppingCartItem().click();
     }
@@ -48,6 +52,7 @@ public class ProductCardPage extends BasePage {
     }
 
     private String checkSizePresent() {
+
         try {
             WebBrowser.getDriver().findElement(bySizeSelectDropdown());
             return "YES";

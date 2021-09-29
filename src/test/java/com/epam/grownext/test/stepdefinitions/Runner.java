@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
         features = "src/test/resources/features/",
         glue = "com/epam/grownext/test/stepdefinitions",
         plugin = {"io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"}
-     //   tags = {"@RegionalSettingsSetup"}
+
 )
 public class Runner extends AbstractTestNGCucumberTests  {
     @Override

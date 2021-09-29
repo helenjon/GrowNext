@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import com.epam.grownext.webbrowser.WebBrowser;
 
+import static com.epam.grownext.webbrowser.WebBrowser.waitHere;
+
 public class HeaderMenu {
 
     private static final String CHANGE_REGIONAL_SETTINGS_XPATH = "//div[@class='change']";
@@ -27,14 +29,16 @@ public class HeaderMenu {
     }
 
     public String getShoppingCartQuantity() {
-        //// wait add to cart animation is finished
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return WebBrowser.getDriver().findElement(byShoppingCartQuantity()).getAttribute("textContent");
     }
+
+    public String checkQuantityWasUpdated(){
+        WebElement element = WebBrowser.getDriver().findElement(byShoppingCartQuantity());
+        waitHere.until(e->element.getAttribute("textContent").equals("1"));
+        return element.getAttribute("textContent");
+    }
+
+
 
     public String getRegionalCountryValue() {
         return  WebBrowser.getDriver().findElement(byRegionalCountryChange()).getAttribute("title");
