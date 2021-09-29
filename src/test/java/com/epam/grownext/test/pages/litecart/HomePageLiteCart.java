@@ -50,9 +50,9 @@ public class HomePageLiteCart extends BasePage {
         Assert.assertEquals(arg0, headerMenu.getPageCountryValue());
     }
 
-    public void CheckForSetupRegionalSettingsPageCountry(String arg0) {
-        Assert.assertEquals(arg0, headerMenu.getPageCountryValue());
-    }
+//    public void CheckForSetupRegionalSettingsPageCountry(String arg0) {
+//        Assert.assertEquals(arg0, headerMenu.getPageCountryValue());
+//    }
 
     public void shoppingCartIsEmpty() {
         Assert.assertEquals("0", headerMenu.getShoppingCartQuantity());
